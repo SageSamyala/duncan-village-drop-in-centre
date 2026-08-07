@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,9 +30,9 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-heading: ui-sans-serif, system-ui, sans-serif;
-    --font-body: ui-sans-serif, system-ui, sans-serif;
-    --font-display: ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Playfair Display", Georgia, serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Playfair Display", Georgia, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -87,6 +88,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: 16px;
   }
+  html { scroll-behavior: smooth; }
+  :focus-visible { outline: 3px solid #FFB300 !important; outline-offset: 3px; }
 }
+
+@keyframes support-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(230,81,0,.25); } 50% { box-shadow: 0 0 0 8px rgba(230,81,0,0); } }
+.support-pulse { animation: support-pulse 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; } }

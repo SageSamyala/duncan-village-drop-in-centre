@@ -6,7 +6,16 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
-// Add page imports here
+import Home from '@/pages/Home';
+import About from '@/pages/About';
+import Programmes from '@/pages/Programmes';
+import HowWeWork from '@/pages/HowWeWork';
+import Impact from '@/pages/Impact';
+import Stories from '@/pages/Stories';
+import GetInvolved from '@/pages/GetInvolved';
+import GetSupport from '@/pages/GetSupport';
+import Team from '@/pages/Team';
+import Contact from '@/pages/Contact';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -34,7 +43,16 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      {/* Add your page Route elements here */}
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/programmes" element={<Programmes />} />
+      <Route path="/how-we-work" element={<HowWeWork />} />
+      <Route path="/impact" element={<Impact />} />
+      <Route path="/stories" element={<Stories />} />
+      <Route path="/get-involved" element={<GetInvolved />} />
+      <Route path="/support" element={<GetSupport />} />
+      <Route path="/team" element={<Team />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

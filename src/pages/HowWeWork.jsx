@@ -1,0 +1,9 @@
+import React from "react";
+import PageShell from "@/components/PageShell";
+import PageHero from "@/components/PageHero";
+const approaches = [
+  ["CASEWORK","Individualised support through counselling, psychosocial assessments, home visits, case management, referrals and crisis intervention."],
+  ["GROUP WORK","PowerGirls, Young Gentlemen's Club, parenting support groups, life-skills groups and reading groups build interpersonal skills, confidence and leadership through shared experience."],
+  ["COMMUNITY WORK","Awareness campaigns, stakeholder collaboration, school partnerships, community mobilisation and food gardening. Growing Together is an example of community development."]
+];
+export default function HowWeWork() { return <PageShell><PageHero eyebrow="HOW WE WORK" title="From individual support to community strength." text="Three connected intervention approaches help us respond with care, consistency and purpose."/><section className="px-5 py-20 lg:px-8"><div className="relative mx-auto max-w-5xl before:absolute before:bottom-0 before:left-6 before:top-0 before:w-1 before:bg-[#1B5E20]/20 md:before:left-1/2">{approaches.map(([title,text],i)=><article key={title} className={`relative mb-12 ml-16 rounded-3xl bg-[#F7F7F3] p-8 md:ml-0 md:w-[46%] ${i%2 ? "md:ml-auto" : ""}`}><span className={`absolute top-8 grid h-12 w-12 place-items-center rounded-full bg-[#FFB300] font-bold ${i%2 ? "-left-[calc(9%+2.2rem)]" : "-left-[5.5rem] md:-right-[calc(9%+2.2rem)] md:left-auto"}`}>0{i+1}</span><h2 className="font-heading text-3xl text-[#1B5E20]">{title}</h2><p className="mt-4 text-lg leading-8 text-black/65">{text}</p></article>)}</div></section></PageShell>; }

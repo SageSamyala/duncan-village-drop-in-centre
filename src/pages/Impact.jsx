@@ -1,0 +1,6 @@
+import React from "react";
+import { Image } from "@/components/ui/image";
+import PageShell from "@/components/PageShell";
+import PageHero from "@/components/PageHero";
+const stats=[[96,"Girls enrolled in Powergirls"],[43,"Homes supported through Growing Together"],[38,"Children enrolled in ECD"],[2001,"Year established"]];
+export default function Impact() { return <PageShell><PageHero eyebrow="OUR IMPACT" title="Measured progress. Human possibility." text="A focused view of the figures currently supplied by our programmes."/><section className="px-5 py-20 lg:px-8"><div className="mx-auto grid max-w-7xl items-stretch gap-6 lg:grid-cols-2"><Image src="https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/803c5bcaa_generated_e72510e0.png" alt="Community members growing food together" className="min-h-[520px] w-full rounded-[2rem]"/><div className="grid grid-cols-2 gap-4">{stats.map(([n,t],i)=><div key={t} className={`flex flex-col justify-between rounded-3xl p-6 ${i===0?"bg-[#1B5E20] text-white":i===1?"bg-[#FFB300]":"bg-[#F1F7F1]"}`}><b className="font-heading text-5xl md:text-7xl">{n}</b><p className="mt-8 font-bold leading-6">{t}</p></div>)}</div></div></section></PageShell>; }

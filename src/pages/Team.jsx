@@ -1,0 +1,6 @@
+import React from "react";
+import { UserRound } from "lucide-react";
+import PageShell from "@/components/PageShell";
+import PageHero from "@/components/PageHero";
+import { team } from "@/data/site";
+export default function Team() { return <PageShell><PageHero eyebrow="OUR TEAM" title="People committed to community." text="Meet the leadership and team serving Duncan Village Drop-in Centre."/><section className="px-5 py-20 lg:px-8"><div className="mx-auto max-w-7xl"><h2 className="font-heading text-3xl text-[#1B5E20]">Leadership</h2><div className="mt-7 grid gap-5 md:grid-cols-3">{team.slice(0,3).map(([n,r])=><article className="rounded-3xl bg-[#1B5E20] p-7 text-white" key={n}><UserRound className="mb-12 h-10 w-10 text-[#FFB300]"/><h3 className="font-heading text-2xl">{n}</h3><p className="mt-2 text-sm font-bold text-white/65">{r}</p></article>)}</div><h2 className="mt-16 font-heading text-3xl text-[#1B5E20]">Our team</h2><div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{team.slice(3).map(([n,r])=><article className="rounded-2xl border border-black/10 p-6" key={n}><h3 className="font-heading text-xl">{n}</h3><p className="mt-2 text-sm leading-6 text-black/60">{r}</p></article>)}</div></div></section></PageShell>; }
