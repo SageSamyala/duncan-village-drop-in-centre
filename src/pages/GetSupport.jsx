@@ -1,7 +1,0 @@
-import React from "react";
-import { Image } from "@/components/ui/image";
-import PageShell from "@/components/PageShell";
-import PageHero from "@/components/PageHero";
-import ContactForm from "@/components/ContactForm";
-const options=[["SOCIAL & FAMILY SUPPORT","Casework"],["EDUCATION & CAREER SUPPORT","Student & Career Support"],["EARLY CHILDHOOD DEVELOPMENT","ECD Safe Park"]];
-export default function GetSupport() { return <PageShell><PageHero eyebrow="GET SUPPORT" title="A clear first step toward support." text="Choose the pathway that best matches your needs, then send a simple enquiry to our team."/><section className="px-5 py-20 lg:px-8"><div className="mx-auto max-w-7xl"><div className="grid gap-5 md:grid-cols-3">{options.map(([a,b],i)=><div key={a} className="rounded-3xl bg-[#F1F7F1] p-7"><span className="font-heading text-4xl text-[#FFB300]">0{i+1}</span><h2 className="mt-8 font-heading text-2xl text-[#1B5E20]">{a}</h2><p className="mt-3 font-bold text-[#E65100]">→ {b}</p></div>)}</div><div className="mt-14 grid items-stretch gap-8 lg:grid-cols-2"><Image src="https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/c82cfc801_generated_009ff62a.png" alt="Children learning safely with an ECD practitioner" className="min-h-[520px] w-full rounded-[2rem]"/><div className="rounded-[2rem] bg-[#F1F7F1] p-4 md:p-8"><ContactForm subject="Support enquiry"/></div></div></div></section></PageShell>; }

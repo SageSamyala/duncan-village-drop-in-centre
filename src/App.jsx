@@ -11,9 +11,7 @@ import About from '@/pages/About';
 import Programmes from '@/pages/Programmes';
 import HowWeWork from '@/pages/HowWeWork';
 import Impact from '@/pages/Impact';
-import Stories from '@/pages/Stories';
 import GetInvolved from '@/pages/GetInvolved';
-import GetSupport from '@/pages/GetSupport';
 import Team from '@/pages/Team';
 import Contact from '@/pages/Contact';
 
@@ -48,9 +46,7 @@ const AuthenticatedApp = () => {
       <Route path="/programmes" element={<Programmes />} />
       <Route path="/how-we-work" element={<HowWeWork />} />
       <Route path="/impact" element={<Impact />} />
-      <Route path="/stories" element={<Stories />} />
       <Route path="/get-involved" element={<GetInvolved />} />
-      <Route path="/support" element={<GetSupport />} />
       <Route path="/team" element={<Team />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<PageNotFound />} />

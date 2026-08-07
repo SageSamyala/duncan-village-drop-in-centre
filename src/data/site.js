@@ -1,6 +1,6 @@
 export const nav = [
   ["HOME", "/"], ["ABOUT US", "/about"], ["OUR PROGRAMMES", "/programmes"],
-  ["HOW WE WORK", "/how-we-work"], ["OUR IMPACT", "/impact"], ["STORIES", "/stories"],
+  ["HOW WE WORK", "/how-we-work"], ["OUR IMPACT", "/impact"],
   ["GET INVOLVED", "/get-involved"], ["CONTACT", "/contact"]
 ];
 export const programmes = [
