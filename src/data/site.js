@@ -12,9 +12,19 @@ export const programmes = [
   { title: "Growing Together", age: "43 homes supported", text: "A gardening and nutrition initiative supporting food production, nutrition, self-reliance, livelihoods and community participation." },
   { title: "Foetal Alcohol Syndrome Awareness", age: "Community and caregivers", text: "Awareness campaigns at local clinics, community education and caregiver awareness about Foetal Alcohol Syndrome." }
 ];
+const B = "https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/";
 export const team = [
-  ["Somila Mdlalana", "Managing Director"], ["Sinesipho Jakavula", "Programmes Manager"], ["Zimkhitha Nweba", "Financial Manager"],
-  ["Lungiswa Siganga", "Administrator"], ["Boniswa Tshemese", "Social Auxiliary Worker / ECD Practitioner"], ["Nokuthula Yose", "Social Auxiliary Worker / ECD Practitioner"],
-  ["Nonzaliseko Maqungo", "Social Auxiliary Worker / ECD Practitioner"], ["Nomathamsanqa Ketani", "Childcare Worker / ECD Practitioner"], ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner"],
-  ["Nondumiso Soga", "ECD Practitioner / Administrative Assistant"], ["Vuyelwa Mahlahla", "Childcare Worker"], ["Zibele Patso", "Caretaker / Security"]
+  ["Somila Mdlalana", "Managing Director / Social Worker", B + "175ea9df1_WhatsAppImage2025-06-20at133004.jpg"],
+  ["Sinesipho Jakavula", "Programmes Manager / Social Worker", B + "377ee0881_WhatsAppImage2025-06-20at122909.jpg"],
+  ["Zimkhitha Nweba", "Financial Manager", B + "b47461789_WhatsAppImage2025-09-16at094045.jpg"],
+  ["Apelele Jonga", "Social Worker", B + "788e86cc1_WhatsAppImage2025-06-24at111331.jpg"],
+  ["Lungiswa Siganga", "Administrator", B + "a0863f4b8_WhatsAppImage2025-06-20at125808.jpg"],
+  ["Boniswa Tshemese", "Social Auxiliary Worker / ECD Practitioner", B + "6b94180ba_WhatsAppImage2025-06-20at125116.jpg"],
+  ["Nokuthula Yose", "Social Auxiliary Worker / ECD Practitioner", B + "d2eded699_WhatsAppImage2025-06-20at124936.jpeg"],
+  ["Nonzaliseko Maqungo", "Social Auxiliary Worker", B + "3ec8d28ea_WhatsAppImage2025-06-20at122244.jpg"],
+  ["Nomathamsanqa Ketani", "Childcare Worker / ECD Practitioner", B + "a9dc80c86_WhatsAppImage2025-06-20at133424.jpg"],
+  ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner", B + "16ae8b211_WhatsAppImage2025-06-20at132136.jpg"],
+  ["Nondumiso Soga", "ECD Practitioner", B + "c9a106643_WhatsAppImage2025-06-20at132214.jpeg"],
+  ["Vuyelwa Mahlahla", "Childcare Worker", B + "a961f0631_WhatsAppImage2025-06-20at133605.jpg"],
+  ["Zibele Patso", "Caretaker / Security", B + "ee1844413_WhatsAppImage2025-06-24at110908.jpeg"]
 ];

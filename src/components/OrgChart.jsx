@@ -1,33 +1,43 @@
 import React from "react";
 import { Image } from "@/components/ui/image";
 
-const md = { name: "Somila Mdlalala", role: "Managing Director / Social Worker" };
+const B = "https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/";
+
+const md = { name: "Somila Mdlalana", role: "Managing Director / Social Worker", photo: B + "175ea9df1_WhatsAppImage2025-06-20at133004.jpg" };
 const reports = [
   {
-    name: "Sinesipho Jakavula", role: "Programs Manager / Social Worker",
+    name: "Sinesipho Jakavula", role: "Programs Manager / Social Worker", photo: B + "377ee0881_WhatsAppImage2025-06-20at122909.jpg",
     team: [
-      ["Apelele Jonga", "Social Worker"],
-      ["Nonzaliseko Maqungo", "Social Auxiliary Worker"],
-      ["Nokuthula Yose", "Social Auxiliary Worker / ECD Practitioner"],
-      ["Boniswa Tshemese", "Social Auxiliary Worker / ECD Practitioner"],
-      ["Nomathamsanqa Ketani", "Childcare Worker / ECD Practitioner"],
-      ["Vuyelwa Mahlahla", "Childcare Worker"],
-      ["Nondumiso Soga", "ECD Practitioner"],
-      ["Zibele Patso", "Caretaker / Security"],
+      ["Apelele Jonga", "Social Worker", B + "788e86cc1_WhatsAppImage2025-06-24at111331.jpg"],
+      ["Nonzaliseko Maqungo", "Social Auxiliary Worker", B + "3ec8d28ea_WhatsAppImage2025-06-20at122244.jpg"],
+      ["Nokuthula Yose", "Social Auxiliary Worker / ECD Practitioner", B + "d2eded699_WhatsAppImage2025-06-20at124936.jpeg"],
+      ["Boniswa Tshemese", "Social Auxiliary Worker / ECD Practitioner", B + "6b94180ba_WhatsAppImage2025-06-20at125116.jpg"],
+      ["Nomathamsanqa Ketani", "Childcare Worker / ECD Practitioner", B + "a9dc80c86_WhatsAppImage2025-06-20at133424.jpg"],
+      ["Vuyelwa Mahlahla", "Childcare Worker", B + "a961f0631_WhatsAppImage2025-06-20at133605.jpg"],
+      ["Nondumiso Soga", "ECD Practitioner", B + "c9a106643_WhatsAppImage2025-06-20at132214.jpeg"],
+      ["Zibele Patso", "Caretaker / Security", B + "ee1844413_WhatsAppImage2025-06-24at110908.jpeg"],
     ],
   },
   {
-    name: "Zimkhitha Nweba", role: "Financial Manager",
+    name: "Zimkhitha Nweba", role: "Financial Manager", photo: B + "b47461789_WhatsAppImage2025-09-16at094045.jpg",
     team: [
-      ["Lungiswa Siganga", "Administrator"],
-      ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner"],
+      ["Lungiswa Siganga", "Administrator", B + "a0863f4b8_WhatsAppImage2025-06-20at125808.jpg"],
+      ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner", B + "16ae8b211_WhatsAppImage2025-06-20at132136.jpg"],
     ],
   },
 ];
 const additional = [
-  { label: "Gardeners", names: ["Mbulele Mbambisa", "Orlando Somdaka"] },
+  { label: "Gardeners", names: ["Mbulelo Mbambisa", "Orlando Somdaka"] },
   { label: "Child & Youth Care Students", names: ["Tandile Kula", "Veronica Tumana"] },
 ];
+
+function Portrait({ src, name }) {
+  return (
+    <div className="mx-auto h-20 w-20 overflow-hidden rounded-full ring-4 ring-[#FFB300]">
+      <Image src={src} alt={name} className="h-full w-full" />
+    </div>
+  );
+}
 
 export default function OrgChart() {
   return (
@@ -36,20 +46,12 @@ export default function OrgChart() {
         <p className="mb-3 text-xs font-bold tracking-[.22em] text-[#E65100]">ORGANISATIONAL STRUCTURE</p>
         <h2 className="font-heading text-4xl leading-tight text-[#1B5E20] md:text-5xl">Our organogram</h2>
 
-        <div className="mt-10 overflow-hidden rounded-[2rem] border border-black/10">
-          <Image
-            src="https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/4ff1b554d_IMG-20260806-WA0014.jpg"
-            alt="Duncan Village Drop-in Centre organisational structure organogram"
-            className="h-auto w-full"
-            fittingType="fit"
-          />
-        </div>
-
         {/* Top level */}
-        <div className="mt-14 flex justify-center">
-          <div className="rounded-2xl border border-[#1B5E20] bg-white px-8 py-6 text-center shadow-md md:px-12">
-            <h3 className="font-heading text-2xl text-[#1B5E20]">{md.name}</h3>
-            <p className="mt-1 text-xs font-bold tracking-wider text-[#E65100]">{md.role}</p>
+        <div className="mt-12 flex justify-center">
+          <div className="w-full max-w-xs rounded-2xl border border-[#1B5E20] bg-white p-6 text-center shadow-md">
+            <Portrait src={md.photo} name={md.name} />
+            <h3 className="mt-4 font-heading text-xl text-[#1B5E20]">{md.name}</h3>
+            <p className="mt-1 text-[11px] font-bold tracking-wider text-[#E65100]">{md.role}</p>
           </div>
         </div>
 
@@ -60,15 +62,21 @@ export default function OrgChart() {
         <div className="grid gap-6 md:grid-cols-2">
           {reports.map((mgr) => (
             <div key={mgr.name} className="rounded-3xl bg-[#F1F7F1] p-6 md:p-8">
-              <div className="rounded-2xl bg-[#1B5E20] px-6 py-5 text-center text-white">
-                <h3 className="font-heading text-xl">{mgr.name}</h3>
+              <div className="rounded-2xl bg-[#1B5E20] px-6 py-6 text-center text-white">
+                <Portrait src={mgr.photo} name={mgr.name} />
+                <h3 className="mt-4 font-heading text-xl">{mgr.name}</h3>
                 <p className="mt-1 text-[11px] font-bold tracking-wider text-[#FFB300]">{mgr.role}</p>
               </div>
-              <ul className="mt-6 space-y-3">
-                {mgr.team.map(([n, r]) => (
-                  <li key={n} className="rounded-xl border border-black/5 bg-white p-4">
-                    <p className="font-bold text-[#212121]">{n}</p>
-                    <p className="text-xs text-black/55">{r}</p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {mgr.team.map(([n, r, p]) => (
+                  <li key={n} className="flex items-center gap-3 rounded-xl border border-black/5 bg-white p-3">
+                    <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-[#FFB300]">
+                      <Image src={p} alt={n} className="h-full w-full" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold leading-tight text-[#212121]">{n}</p>
+                      <p className="text-[11px] leading-tight text-black/55">{r}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
