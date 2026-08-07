@@ -22,7 +22,7 @@ const reports = [
     name: "Zimkhitha Nweba", role: "Financial Manager", photo: B + "b47461789_WhatsAppImage2025-09-16at094045.jpg",
     team: [
       ["Lungiswa Siganga", "Administrator", B + "a0863f4b8_WhatsAppImage2025-06-20at125808.jpg"],
-      ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner", B + "16ae8b211_WhatsAppImage2025-06-20at132136.jpg"],
+      ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner", B + "a12db974e_WhatsAppImage2025-06-21at090935.jpg"],
     ],
   },
 ];
