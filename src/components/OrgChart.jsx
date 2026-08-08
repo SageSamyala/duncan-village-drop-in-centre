@@ -8,13 +8,14 @@ const reports = [
   {
     name: "Sinesipho Jakavula", role: "Programs Manager / Social Worker", photo: B + "377ee0881_WhatsAppImage2025-06-20at122909.jpg",
     team: [
-      ["Apelele Jonga", "Social Worker", B + "788e86cc1_WhatsAppImage2025-06-24at111331.jpg"],
-      ["Nonzaliseko Maqungo", "Social Auxiliary Worker", B + "3ec8d28ea_WhatsAppImage2025-06-20at122244.jpg"],
+      ["Aphelele Jonga", "Social Worker", B + "30aaf4581_WhatsAppImage2026-08-08at084753.jpg"],
+      ["Nonzaliseko Maqungo", "Social Auxiliary Worker", B + "6b94180ba_WhatsAppImage2025-06-20at125116.jpg"],
       ["Nokuthula Yose", "Social Auxiliary Worker / ECD Practitioner", B + "d2eded699_WhatsAppImage2025-06-20at124936.jpeg"],
-      ["Boniswa Tshemese", "Social Auxiliary Worker / ECD Practitioner", B + "6b94180ba_WhatsAppImage2025-06-20at125116.jpg"],
+      ["Boniswa Tshemese", "Social Auxiliary Worker / ECD Practitioner", B + "3ec8d28ea_WhatsAppImage2025-06-20at122244.jpg"],
       ["Nomathamsanqa Ketani", "Childcare Worker / ECD Practitioner", B + "a9dc80c86_WhatsAppImage2025-06-20at133424.jpg"],
-      ["Vuyelwa Mahlahla", "Childcare Worker", B + "a961f0631_WhatsAppImage2025-06-20at133605.jpg"],
-      ["Nondumiso Soga", "ECD Practitioner", B + "c9a106643_WhatsAppImage2025-06-20at132214.jpeg"],
+      ["Vuyelwa Mahlahla", "Childcare Worker", B + "c9a106643_WhatsAppImage2025-06-20at132214.jpeg"],
+      ["Nondumiso Soga", "ECD Practitioner", B + "a961f0631_WhatsAppImage2025-06-20at133605.jpg"],
+      ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner", B + "a12db974e_WhatsAppImage2025-06-21at090935.jpg"],
       ["Zibele Patso", "Caretaker / Security", B + "ee1844413_WhatsAppImage2025-06-24at110908.jpeg"],
     ],
   },
@@ -22,7 +23,6 @@ const reports = [
     name: "Zimkhitha Nweba", role: "Financial Manager", photo: B + "b47461789_WhatsAppImage2025-09-16at094045.jpg",
     team: [
       ["Lungiswa Siganga", "Administrator", B + "a0863f4b8_WhatsAppImage2025-06-20at125808.jpg"],
-      ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner", B + "a12db974e_WhatsAppImage2025-06-21at090935.jpg"],
     ],
   },
 ];
