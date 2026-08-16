@@ -33,13 +33,13 @@ export default function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-4 xl:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-3 lg:flex" aria-label="Main navigation">
           {nav.map(([label, path]) => (
             <NavLink
               key={path}
               to={path}
               className={({ isActive }) =>
-                `text-[11px] font-bold tracking-wider transition ${isActive ? "text-[#6A1B9A]" : "text-[#212121] hover:text-[#1B5E20]"}`
+                `whitespace-nowrap text-[11px] font-bold tracking-wider transition ${isActive ? "text-[#6A1B9A]" : "text-[#212121] hover:text-[#1B5E20]"}`
               }
             >
               {label}
@@ -59,7 +59,7 @@ export default function SiteHeader() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2 xl:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <Link
             to="/contact"
             className="rounded-full bg-[#E65100] px-4 py-3 text-[11px] font-bold tracking-wider text-white"

@@ -25,7 +25,7 @@ export default function MobileNav({ open, onClose }) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-white xl:hidden" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <div className="fixed inset-0 z-50 flex flex-col bg-white lg:hidden" role="dialog" aria-modal="true" aria-label="Site navigation">
       <div className="flex items-center justify-between border-b px-5 py-4">
         <span className="font-heading text-base leading-tight text-[#1B5E20]">
           Duncan Village Safe Park<br />and Drop-in Centre
