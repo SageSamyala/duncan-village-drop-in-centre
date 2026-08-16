@@ -6,8 +6,13 @@ import { nav } from "@/data/site";
 /** Full-screen mobile navigation panel: locks page scroll, closes on Escape and on route change. */
 export default function MobileNav({ open, onClose }) {
   const { pathname } = useLocation();
+  const firstRun = React.useRef(true);
 
   useEffect(() => {
+    if (firstRun.current) {
+      firstRun.current = false;
+      return;
+    }
     onClose();
   }, [pathname]);
 
