@@ -16,6 +16,7 @@ const reports = [
       ["Vuyelwa Mahlahla", "Childcare Worker", B + "c9a106643_WhatsAppImage2025-06-20at132214.jpeg"],
       ["Nondumiso Soga", "ECD Practitioner", B + "a961f0631_WhatsAppImage2025-06-20at133605.jpg"],
       ["Nontsikelelo Tshantshi", "Childcare Worker / ECD Practitioner", B + "a12db974e_WhatsAppImage2025-06-21at090935.jpg"],
+      ["Zibele Patso", "Caretaker / Security", B + "ee1844413_WhatsAppImage2025-06-24at110908.jpeg"],
     ],
   },
   {
