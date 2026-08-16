@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { nav } from "@/data/site";
+import MobileNav from "@/components/MobileNav";
 
 const LOGO = "https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/fcca44e48_WhatsAppImage2025-06-20at112612.jpeg";
 
@@ -66,44 +67,18 @@ export default function SiteHeader() {
             GET SUPPORT
           </Link>
           <button
-            className="rounded-lg p-3 text-[#1B5E20]"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle navigation"
+            className="flex items-center gap-2 rounded-lg px-3 py-3 text-[#1B5E20]"
+            onClick={() => setOpen(true)}
+            aria-label="Open navigation menu"
             aria-expanded={open}
           >
-            {open ? <X /> : <Menu />}
+            <Menu />
+            <span className="text-[11px] font-bold tracking-wider">MENU</span>
           </button>
         </div>
       </div>
 
-      {open && (
-        <nav className="border-t bg-white px-5 py-5 xl:hidden" aria-label="Mobile navigation">
-          {nav.map(([label, path]) => (
-            <NavLink
-              onClick={() => setOpen(false)}
-              className={({ isActive }) => `block border-b py-4 text-sm font-bold ${isActive ? "text-[#6A1B9A]" : "text-[#212121]"}`}
-              key={path}
-              to={path}
-            >
-              {label}
-            </NavLink>
-          ))}
-          <Link
-            onClick={() => setOpen(false)}
-            to="/contact"
-            className="mt-5 block rounded-full bg-[#E65100] px-5 py-4 text-center text-sm font-bold text-white"
-          >
-            GET SUPPORT
-          </Link>
-          <Link
-            onClick={() => setOpen(false)}
-            to="/get-involved"
-            className="mt-3 block rounded-full bg-[#1B5E20] px-5 py-4 text-center text-sm font-bold text-white"
-          >
-            SUPPORT OUR WORK
-          </Link>
-        </nav>
-      )}
+      <MobileNav open={open} onClose={() => setOpen(false)} />
     </header>
   );
 }

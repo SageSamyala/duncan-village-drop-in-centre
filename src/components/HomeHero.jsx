@@ -5,20 +5,20 @@ import { Image } from "@/components/ui/image";
 /** Above-the-fold hero: who we help, what we do, and the two clearest next actions. */
 export default function HomeHero() {
   return (
-    <section className="grid bg-[#F1F7F1] lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[1.05fr_1fr]">
-      <div className="flex items-center px-5 py-14 md:py-20 lg:px-[max(2rem,calc((100vw-80rem)/2))] lg:pr-14">
+    <section className="bg-[#F1F7F1]">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:px-8 lg:py-16">
         <div>
-          <p className="mb-5 text-xs font-bold tracking-[.22em] text-[#6A1B9A]">
+          <p className="mb-4 text-xs font-bold tracking-[.22em] text-[#6A1B9A]">
             DUNCAN VILLAGE, EAST LONDON · SINCE 2001
           </p>
-          <h1 className="font-heading text-4xl leading-[1.05] text-[#1B5E20] sm:text-5xl md:text-6xl">
+          <h1 className="font-heading text-3xl leading-[1.1] text-[#1B5E20] sm:text-4xl lg:text-5xl">
             Care, safety and opportunity for children and families in Duncan Village.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-black/70">
+          <p className="mt-5 max-w-xl text-base leading-7 text-black/70 lg:text-lg lg:leading-8">
             We are a registered non-profit offering early childhood development, youth programmes,
             social casework and community support — free of charge, close to home.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               to="/contact"
               className="support-pulse inline-flex min-h-14 items-center justify-center rounded-full bg-[#E65100] px-7 text-sm font-bold tracking-wide text-white transition hover:bg-[#c94700]"
@@ -39,18 +39,19 @@ export default function HomeHero() {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="relative min-h-[360px] md:min-h-[460px] lg:min-h-full">
-        <Image
-          src="https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/be2ad761c_WhatsAppImage2026-08-04at142759.jpg"
-          alt="A Duncan Village Safe Park and Drop-in Centre team member speaking to learners at a school outreach"
-          className="absolute inset-0 h-full w-full"
-          focalPointX={0.5}
-          focalPointY={0.35}
-        />
-        <p className="absolute bottom-5 left-5 right-5 rounded-2xl bg-[#FFB300] p-5 font-heading text-xl text-[#212121] sm:right-auto sm:text-2xl">
-          Children are the future.
-        </p>
+
+        <figure className="relative m-0">
+          <Image
+            src="https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/c823abbba_WhatsAppImage2025-06-20at1006581.jpg"
+            alt="Children playing games together in the centre's colourful courtyard while practitioners watch over them"
+            className="h-[280px] w-full rounded-[2rem] sm:h-[340px] lg:h-[420px]"
+            focalPointX={0.5}
+            focalPointY={0.45}
+          />
+          <figcaption className="mx-4 -mt-8 rounded-2xl bg-[#FFB300] p-5 font-heading text-lg text-[#212121] shadow-lg sm:mx-6 sm:text-xl">
+            Children are the future.
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
