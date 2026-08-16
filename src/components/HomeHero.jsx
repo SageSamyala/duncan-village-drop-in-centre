@@ -40,15 +40,15 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <figure className="relative m-0">
+        <figure className="m-0 overflow-hidden rounded-[2rem] bg-white shadow-lg">
           <Image
             src="https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/c823abbba_WhatsAppImage2025-06-20at1006581.jpg"
             alt="Children playing games together in the centre's colourful courtyard while practitioners watch over them"
-            className="h-[280px] w-full rounded-[2rem] sm:h-[340px] lg:h-[420px]"
+            className="block h-[260px] w-full sm:h-[320px] lg:h-[400px]"
             focalPointX={0.5}
             focalPointY={0.45}
           />
-          <figcaption className="mx-4 -mt-8 rounded-2xl bg-[#FFB300] p-5 font-heading text-lg text-[#212121] shadow-lg sm:mx-6 sm:text-xl">
+          <figcaption className="bg-[#FFB300] px-6 py-5 font-heading text-lg text-[#212121] sm:text-xl">
             Children are the future.
           </figcaption>
         </figure>
