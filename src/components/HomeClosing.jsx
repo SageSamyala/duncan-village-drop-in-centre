@@ -1,4 +1,66 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SectionTitle from "@/components/SectionTitle";
-export default function HomeClosing() { return <><section className="bg-[#212121] px-5 py-14 text-white lg:px-8"><div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 text-center md:grid-cols-4">{[[96,"Girls in Powergirls"],[43,"Homes growing together"],[46,"Children in ECD"],[2001,"Year established"]].map(([n,t])=><div key={t}><b className="font-heading text-5xl text-[#FFB300]">{n}</b><p className="mt-2 text-sm text-white/65">{t}</p></div>)}</div></section><section className="px-5 py-20 lg:px-8"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2"><div><SectionTitle label="STORIES OF HOPE" title="Progress worth sharing." text="A dedicated home for future programme updates, community milestones, events and impact stories."/><Link to="/impact" className="mt-7 inline-block font-bold text-[#E65100]">SEE OUR IMPACT →</Link></div><div className="rounded-3xl bg-[#FFF4DD] p-8"><h3 className="font-heading text-3xl">Need support?</h3><p className="mt-4 leading-7 text-black/60">Find the right pathway for social and family support, education and career guidance, or early childhood development.</p><Link to="/contact" className="mt-6 inline-block rounded-full bg-[#E65100] px-6 py-4 text-sm font-bold text-white">FIND SUPPORT</Link></div></div></section><section className="bg-[#FFB300] px-5 py-16 text-center"><h2 className="font-heading text-4xl md:text-5xl">Put hope into action.</h2><p className="mx-auto mt-4 max-w-2xl text-lg">Donate, volunteer, partner with us or support a programme.</p><Link to="/get-involved" className="mt-7 inline-block rounded-full bg-[#212121] px-7 py-4 text-sm font-bold text-white">GET INVOLVED</Link></section></>; }
+
+const stats = [
+  ["96", "girls enrolled in Powergirls"],
+  ["42", "boys in the Young Gentlemen's Club"],
+  ["46", "children enrolled in ECD"],
+  ["43", "homes in Growing Together"]
+];
+
+export default function HomeClosing() {
+  return (
+    <>
+      <section aria-labelledby="impact-heading" className="bg-[#212121] px-5 py-20 text-white lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-3 text-xs font-bold tracking-[.22em] text-[#FFB300]">OUR IMPACT</p>
+          <h2 id="impact-heading" className="max-w-3xl font-heading text-4xl leading-tight md:text-5xl">
+            Current enrolment across our programmes.
+          </h2>
+          <dl className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
+            {stats.map(([n, t]) => (
+              <div key={t}>
+                <dt className="sr-only">{t}</dt>
+                <dd>
+                  <b className="block font-heading text-5xl text-[#FFB300] md:text-6xl">{n}</b>
+                  <span className="mt-3 block text-sm leading-6 text-white/70">{t}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-10 text-sm text-white/55">
+            Figures reflect current programme enrolment as reported by our team.
+          </p>
+          <Link to="/impact" className="mt-6 inline-flex text-sm font-bold text-[#FFB300] hover:underline">
+            SEE OUR FULL IMPACT →
+          </Link>
+        </div>
+      </section>
+
+      <section aria-labelledby="cta-heading" className="px-5 py-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
+          <div className="rounded-3xl bg-[#FFF4DD] p-8 md:p-10">
+            <h2 id="cta-heading" className="font-heading text-3xl text-[#1B5E20]">Need support?</h2>
+            <p className="mt-4 leading-7 text-black/65">
+              Whether it is social and family support, education and career guidance, or a place for
+              your child, our team will point you to the right person. Support is free of charge.
+            </p>
+            <Link to="/contact" className="mt-7 inline-flex min-h-14 items-center rounded-full bg-[#E65100] px-7 text-sm font-bold text-white transition hover:bg-[#c94700]">
+              GET SUPPORT
+            </Link>
+          </div>
+          <div className="rounded-3xl bg-[#F3EDF7] p-8 md:p-10">
+            <h2 className="font-heading text-3xl text-[#6A1B9A]">Want to help?</h2>
+            <p className="mt-4 leading-7 text-black/65">
+              Donate to a registered NPO, volunteer your time and skills, or partner with us to
+              strengthen a programme in Duncan Village.
+            </p>
+            <Link to="/get-involved" className="mt-7 inline-flex min-h-14 items-center rounded-full bg-[#6A1B9A] px-7 text-sm font-bold text-white transition hover:bg-[#571580]">
+              SUPPORT OUR WORK
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

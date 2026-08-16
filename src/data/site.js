@@ -1,7 +1,7 @@
 export const nav = [
-  ["HOME", "/"], ["ABOUT US", "/about"], ["OUR PROGRAMMES", "/programmes"],
+  ["HOME", "/"], ["ABOUT US", "/about"], ["PROGRAMMES", "/programmes"],
   ["HOW WE WORK", "/how-we-work"], ["OUR IMPACT", "/impact"],
-  ["GET INVOLVED", "/get-involved"], ["CONTACT", "/contact"]
+  ["OUR TEAM", "/team"], ["GET INVOLVED", "/get-involved"]
 ];
 export const programmes = [
   { title: "ECD – Safe Park Day Care Centre", age: "Children aged 1–5", text: "A safe and nurturing environment focused on care and early childhood development, with 46 children currently enrolled. Registered with the Department of Education." },
