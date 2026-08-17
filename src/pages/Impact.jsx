@@ -4,6 +4,7 @@ import { Image } from "@/components/ui/image";
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
+import StudentSupport from "@/components/StudentSupport";
 
 const stats = [
   ["96", "girls enrolled in the Powergirls Programme", "bg-[#1B5E20] text-white", "text-white/70"],
@@ -67,6 +68,8 @@ export default function Impact() {
           </div>
         </div>
       </section>
+
+      <StudentSupport />
 
       <section aria-labelledby="accountability-heading" className="bg-[#1B5E20] px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
