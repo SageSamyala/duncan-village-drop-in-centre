@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
 import DonationDetails from "@/components/DonationDetails";
 import VolunteerForm from "@/components/VolunteerForm";
+import Sponsors from "@/components/Sponsors";
 
 const ways = [
   [Banknote, "Donate", "Give once or monthly to a registered NPO and PBO. Banking details are below.", "#donate"],
@@ -98,6 +99,8 @@ export default function GetInvolved() {
           <VolunteerForm />
         </div>
       </section>
+
+      <Sponsors />
     </PageShell>
   );
 }
