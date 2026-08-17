@@ -8,8 +8,11 @@ export default function HomeHero() {
     <section className="bg-[#F1F7F1]">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:px-8 lg:py-16">
         <div>
+          <p className="mb-3 font-heading text-lg text-[#E65100] sm:text-xl">
+            Wamkelekile – Hands of Hope | Izandla ZeThemba
+          </p>
           <p className="mb-4 text-xs font-bold tracking-[.22em] text-[#6A1B9A]">
-            DUNCAN VILLAGE, EAST LONDON · SINCE 2001
+            DUNCAN VILLAGE, EAST LONDON · GROWING FUTURES SINCE 2001
           </p>
           <h1 className="font-heading text-3xl leading-[1.1] text-[#1B5E20] sm:text-4xl lg:text-5xl">
             Care, safety and opportunity for children and families in Duncan Village.

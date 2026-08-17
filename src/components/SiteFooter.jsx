@@ -61,6 +61,7 @@ export default function SiteFooter() {
               </div>
             ))}
           </dl>
+          <p className="mt-4 text-xs font-bold leading-5 text-[#FFB300]">Section 18A tax deductible donations</p>
           <Link
             to="/get-involved"
             className="mt-6 inline-flex min-h-12 items-center rounded-full bg-[#FFB300] px-6 text-xs font-bold tracking-wider text-[#212121] transition hover:bg-[#e6a100]"

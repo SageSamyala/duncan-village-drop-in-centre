@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const stats = [
-  ["96", "girls enrolled in Powergirls"],
-  ["42", "boys in the Young Gentlemen's Club"],
-  ["46", "children enrolled in ECD"],
-  ["43", "homes in Growing Together"]
+  [2001, "", "year established"],
+  [96, "+", "girls enrolled in Powergirls"],
+  [42, "+", "boys in the Young Gentlemen's Club"],
+  [43, "+", "homes in Growing Together"]
 ];
 
 export default function HomeClosing() {
@@ -18,11 +19,11 @@ export default function HomeClosing() {
             Current enrolment across our programmes.
           </h2>
           <dl className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map(([n, t]) => (
+            {stats.map(([n, suffix, t]) => (
               <div key={t}>
                 <dt className="sr-only">{t}</dt>
                 <dd>
-                  <b className="block font-heading text-5xl text-[#FFB300] md:text-6xl">{n}</b>
+                  <AnimatedCounter value={n} suffix={suffix} className="block font-heading text-5xl text-[#FFB300] md:text-6xl" />
                   <span className="mt-3 block text-sm leading-6 text-white/70">{t}</span>
                 </dd>
               </div>

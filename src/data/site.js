@@ -4,13 +4,13 @@ export const nav = [
   ["OUR TEAM", "/team"], ["GET INVOLVED", "/get-involved"]
 ];
 export const programmes = [
-  { title: "ECD – Safe Park Day Care Centre", age: "Children aged 1–5", text: "A safe and nurturing environment focused on care and early childhood development, with 46 children currently enrolled. Registered with the Department of Education." },
-  { title: "Powergirls Programme", age: "Girls aged 9–16", text: "After-school groupwork therapy through mentorship, education, psychosocial support, gender equality, reproductive health, leadership and academic growth." },
-  { title: "Young Gentlemen's Club", age: "Boys aged 9–17", text: "After-school groupwork therapy focused on identity, respect, leadership, resilience, life skills and positive values, with 42 boys currently enrolled." },
-  { title: "Student & Career Support Programme", age: "Learners, students and job seekers", text: "Homework and academic support, tertiary and university/TVET applications, NSFAS assistance and job-seeking support." },
-  { title: "Casework", age: "Individuals and families", text: "Counselling, assessments, home visits, case management, referrals, crisis and disaster response, food parcels, school support, documentation, SASSA and Home Affairs assistance, and referrals to CMR, DSD and SAPS. Includes RUMS support for refugees, undocumented, migrated and stateless clients." },
-  { title: "Growing Together", age: "43 homes supported", text: "A gardening and nutrition initiative supporting food production, nutrition, self-reliance, livelihoods and community participation." },
-  { title: "Foetal Alcohol Syndrome Awareness", age: "Community and caregivers", text: "Awareness campaigns at local clinics, community education and caregiver awareness about Foetal Alcohol Syndrome." }
+  { title: "ECD – Safe Park Day Care Centre", category: "Early Childhood", age: "Children aged 1–5", text: "A safe and nurturing environment focused on care and early childhood development, with 46 children currently enrolled. Registered with the Department of Education." },
+  { title: "Powergirls Programme", category: "Youth & Teens", age: "Girls aged 9–16", text: "After-school groupwork therapy through mentorship, education, psychosocial support, gender equality, reproductive health, leadership and academic growth." },
+  { title: "Young Gentlemen's Club", category: "Youth & Teens", age: "Boys aged 9–17", text: "After-school groupwork therapy focused on identity, respect, leadership, resilience, life skills and positive values, with 42 boys currently enrolled." },
+  { title: "Student & Career Support Programme", category: "Youth & Teens", age: "Learners, students and job seekers", text: "Homework and academic support, tertiary and university/TVET applications, NSFAS assistance and job-seeking support." },
+  { title: "Casework", category: "Family & Social Care", age: "Individuals and families", text: "Counselling, assessments, home visits, case management, referrals, crisis and disaster response, food parcels, school support, documentation, SASSA and Home Affairs assistance, and referrals to CMR, DSD and SAPS. Includes RUMS support for refugees, undocumented, migrated and stateless clients." },
+  { title: "Growing Together", category: "Community & Food Security", age: "43 homes supported", text: "A gardening and nutrition initiative supporting food production, nutrition, self-reliance, livelihoods and community participation." },
+  { title: "Foetal Alcohol Syndrome Awareness", category: "Community & Food Security", age: "Community and caregivers", text: "Awareness campaigns at local clinics, community education and caregiver awareness about Foetal Alcohol Syndrome." }
 ];
 const B = "https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/";
 export const team = [

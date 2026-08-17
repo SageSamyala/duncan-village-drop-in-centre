@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
-import ProgrammeCard from "@/components/ProgrammeCard";
-import { programmes } from "@/data/site";
+import ProgrammeFilter from "@/components/ProgrammeFilter";
 
 export default function Programmes() {
   return (
@@ -20,10 +19,8 @@ export default function Programmes() {
         text="Connected programmes for children, young people, individuals, families and the wider community. All of our programmes are offered free of charge."
       />
       <section className="px-5 py-20 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {programmes.map((item, i) => (
-            <ProgrammeCard key={item.title} item={item} index={i} />
-          ))}
+        <div className="mx-auto max-w-7xl">
+          <ProgrammeFilter />
         </div>
         <div className="mx-auto mt-12 max-w-7xl rounded-[2rem] bg-[#F1F7F1] p-8 md:p-10">
           <h2 className="font-heading text-3xl text-[#1B5E20]">Not sure which programme fits?</h2>

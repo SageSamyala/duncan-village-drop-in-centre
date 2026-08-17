@@ -4,6 +4,7 @@ import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
 import DonationDetails from "@/components/DonationDetails";
+import DonationTiers from "@/components/DonationTiers";
 import VolunteerForm from "@/components/VolunteerForm";
 import Sponsors from "@/components/Sponsors";
 
@@ -47,6 +48,8 @@ export default function GetInvolved() {
           </div>
         </div>
       </section>
+
+      <DonationTiers />
 
       <section id="donate" aria-labelledby="donate-heading" className="scroll-mt-24 bg-[#F7F7F3] px-5 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
