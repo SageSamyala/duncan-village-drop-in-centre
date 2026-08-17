@@ -26,10 +26,13 @@ export default function SiteHeader() {
             focalPointX={0.5}
             focalPointY={0.35}
           />
-          <span className="max-w-[11rem] sm:max-w-[13rem]">
-            <b className="block font-heading text-xs leading-tight text-[#1B5E20] sm:text-sm md:text-base">
-              Duncan Village Safe Park<br />and Drop-in Centre
+          <span className="max-w-[12rem] sm:max-w-[15rem]">
+            <b className="block font-body text-[13px] font-extrabold uppercase leading-[1.15] tracking-[.12em] text-[#1B5E20] sm:text-sm">
+              Duncan Village Safe Park
             </b>
+            <span className="mt-0.5 block font-body text-[10px] font-bold uppercase leading-[1.15] tracking-[.16em] text-[#6A1B9A] sm:text-[11px]">
+              and Drop-in Centre
+            </span>
           </span>
         </Link>
 
