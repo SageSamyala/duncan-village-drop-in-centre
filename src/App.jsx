@@ -12,7 +12,7 @@ import Programmes from '@/pages/Programmes';
 import HowWeWork from '@/pages/HowWeWork';
 import Impact from '@/pages/Impact';
 import GetInvolved from '@/pages/GetInvolved';
-import Team from '@/pages/Team';
+
 import Contact from '@/pages/Contact';
 
 const AuthenticatedApp = () => {
@@ -47,7 +47,7 @@ const AuthenticatedApp = () => {
       <Route path="/how-we-work" element={<HowWeWork />} />
       <Route path="/impact" element={<Impact />} />
       <Route path="/get-involved" element={<GetInvolved />} />
-      <Route path="/team" element={<Team />} />
+
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
