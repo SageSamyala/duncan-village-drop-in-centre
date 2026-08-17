@@ -6,6 +6,7 @@ import TrustMarkers from "@/components/TrustMarkers";
 import HomeSections from "@/components/HomeSections";
 import HomeHelp from "@/components/HomeHelp";
 import HomeClosing from "@/components/HomeClosing";
+import Sponsors from "@/components/Sponsors";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <TrustMarkers />
       <HomeSections />
       <HomeHelp />
+      <Sponsors />
       <HomeClosing />
     </PageShell>
   );
