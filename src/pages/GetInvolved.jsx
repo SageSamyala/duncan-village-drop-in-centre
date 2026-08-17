@@ -64,7 +64,7 @@ export default function GetInvolved() {
               information about how funds are used.
             </p>
             <dl className="mt-9 grid gap-4 sm:grid-cols-2">
-              {[["NPO No.", "196-023"], ["PBO Ref No.", "930085949"], ["CIPC Reg No.", "2018/071881/08"], ["VAT registered", "Yes"]].map(([a, b]) => (
+              {[["NPO No.", "196-023"], ["PBO Ref No.", "930085949"], ["CIPC Reg No.", "2018/071881/08"], ["VAT No.", "4230324750"]].map(([a, b]) => (
                 <div key={a} className="rounded-2xl bg-white p-5">
                   <dt className="text-xs font-bold text-[#6A1B9A]">{a}</dt>
                   <dd className="mt-2 font-heading text-lg">{b}</dd>

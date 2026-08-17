@@ -54,7 +54,7 @@ export default function SiteFooter() {
         <div>
           <h3 className="mb-5 text-xs font-bold tracking-[.18em] text-[#FFB300]">ORGANISATION</h3>
           <dl className="space-y-3 text-sm text-white/70">
-            {[["NPO No.", "196-023"], ["PBO Ref No.", "930085949"], ["CIPC Reg No.", "2018/071881/08"], ["VAT registered", "Yes"]].map(([a, b]) => (
+            {[["NPO No.", "196-023"], ["PBO Ref No.", "930085949"], ["CIPC Reg No.", "2018/071881/08"], ["VAT No.", "4230324750"]].map(([a, b]) => (
               <div key={a}>
                 <dt className="text-white/45">{a}</dt>
                 <dd className="font-bold text-white/80">{b}</dd>
