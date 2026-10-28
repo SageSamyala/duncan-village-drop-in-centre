@@ -1,17 +1,65 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Image } from "@/components/ui/image";
+import { Play, Pause } from "lucide-react";
 
 /** Above-the-fold hero: who we help, what we do, and the two clearest next actions. */
 export default function HomeHero() {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const syncPlaybackWithPreference = () => {
+      if (mediaQuery.matches) {
+        video.pause();
+        setIsPlaying(false);
+      } else {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => setIsPlaying(true))
+            .catch(() => setIsPlaying(false));
+        }
+      }
+    };
+
+    syncPlaybackWithPreference();
+    mediaQuery.addEventListener("change", syncPlaybackWithPreference);
+
+    return () => {
+      mediaQuery.removeEventListener("change", syncPlaybackWithPreference);
+    };
+  }, []);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => setIsPlaying(true))
+          .catch(() => setIsPlaying(false));
+      }
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
   return (
-    <section className="bg-[#F1F7F1]">
+    <section className="w-full overflow-hidden bg-[#F1F7F1]">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:px-8 lg:py-16">
-        <div>
+        <div className="min-w-0">
           <p className="mb-3 font-heading text-lg text-[#E65100] sm:text-xl">
             Wamkelekile – Hands of Hope | Izandla ZeThemba
           </p>
-          <p className="mb-4 text-xs font-bold tracking-[.22em] text-[#6A1B9A]">
+          <p className="mb-4 text-xs font-bold tracking-[.16em] text-[#6A1B9A] sm:tracking-[.22em]">
             DUNCAN VILLAGE, EAST LONDON · GROWING FUTURES SINCE 2001
           </p>
           <h1 className="font-heading text-3xl leading-[1.1] text-[#1B5E20] sm:text-4xl lg:text-5xl">
@@ -43,14 +91,44 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <figure className="m-0 overflow-hidden rounded-[2rem] bg-white shadow-lg">
-          <Image
-            src="https://media.base44.com/images/public/6a75f1f68617f8a7b5abfa7c/c823abbba_WhatsAppImage2025-06-20at1006581.jpg"
-            alt="Children playing games together in the centre's colourful courtyard while practitioners watch over them"
-            className="block h-[260px] w-full sm:h-[320px] lg:h-[400px]"
-            focalPointX={0.5}
-            focalPointY={0.45}
-          />
+        <figure className="m-0 w-full min-w-0 overflow-hidden rounded-[2rem] bg-white shadow-lg">
+          <div className="relative w-full">
+            <video
+              ref={videoRef}
+              poster="/media/hero-poster.jpg"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              width={832}
+              height={464}
+              className="block h-[260px] w-full object-cover object-[center_35%] sm:h-[320px] lg:h-[400px]"
+              aria-label="Duncan Village Safe Park youth celebration and community dance"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+            >
+              <source src="/media/hero-preview.mp4" type="video/mp4" />
+              <img
+                src="/media/hero-poster.jpg"
+                alt="Duncan Village Safe Park youth celebration"
+                className="block h-[260px] w-full object-cover object-[center_35%] sm:h-[320px] lg:h-[400px]"
+              />
+            </video>
+            <button
+              type="button"
+              onClick={togglePlay}
+              aria-label={isPlaying ? "Pause hero video" : "Play hero video"}
+              aria-pressed={isPlaying}
+              className="absolute bottom-3 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:ring-offset-2 sm:bottom-4 sm:right-4"
+            >
+              {isPlaying ? (
+                <Pause className="h-5 w-5 fill-current" aria-hidden="true" />
+              ) : (
+                <Play className="h-5 w-5 fill-current translate-x-0.5" aria-hidden="true" />
+              )}
+            </button>
+          </div>
           <figcaption className="bg-[#FFB300] px-6 py-5 font-heading text-lg text-[#212121] sm:text-xl">
             Children are the future.
           </figcaption>
