@@ -1,55 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Play, Pause } from "lucide-react";
+import { Play } from "lucide-react";
 
 /** Above-the-fold hero: who we help, what we do, and the two clearest next actions. */
 export default function HomeHero() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
-  useEffect(() => {
+  const startPlayback = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const syncPlaybackWithPreference = () => {
-      if (mediaQuery.matches) {
-        video.pause();
-        setIsPlaying(false);
-      } else {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => setIsPlaying(true))
-            .catch(() => setIsPlaying(false));
-        }
-      }
-    };
-
-    syncPlaybackWithPreference();
-    mediaQuery.addEventListener("change", syncPlaybackWithPreference);
-
-    return () => {
-      mediaQuery.removeEventListener("change", syncPlaybackWithPreference);
-    };
-  }, []);
-
-  const togglePlay = () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (video.paused) {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => setIsPlaying(true))
-          .catch(() => setIsPlaying(false));
-      }
-    } else {
-      video.pause();
-      setIsPlaying(false);
-    }
+    video
+      .play()
+      .then(() => {
+        setIsPlaying(true);
+        setHasStarted(true);
+      })
+      .catch((err) => {
+        console.error("Playback failed:", err);
+      });
   };
 
   return (
@@ -92,42 +63,54 @@ export default function HomeHero() {
         </div>
 
         <figure className="m-0 w-full min-w-0 overflow-hidden rounded-[2rem] bg-white shadow-lg">
-          <div className="relative w-full">
+          <div className="group relative w-full bg-black">
             <video
               ref={videoRef}
               poster="/media/hero-poster.jpg"
-              autoPlay
-              loop
-              muted
               playsInline
               preload="metadata"
+              controls={hasStarted}
               width={832}
               height={464}
               className="block h-[260px] w-full object-cover object-[center_35%] sm:h-[320px] lg:h-[400px]"
-              aria-label="Duncan Village Safe Park youth celebration and community dance"
-              onPlay={() => setIsPlaying(true)}
+              aria-label="Duncan Village Safe Park community video"
+              onPlay={() => {
+                setIsPlaying(true);
+                setHasStarted(true);
+              }}
               onPause={() => setIsPlaying(false)}
+              onEnded={() => setIsPlaying(false)}
             >
-              <source src="/media/hero-preview.mp4" type="video/mp4" />
+              <source src="/media/hero-video.mp4" type="video/mp4" />
               <img
                 src="/media/hero-poster.jpg"
                 alt="Duncan Village Safe Park youth celebration"
                 className="block h-[260px] w-full object-cover object-[center_35%] sm:h-[320px] lg:h-[400px]"
               />
             </video>
-            <button
-              type="button"
-              onClick={togglePlay}
-              aria-label={isPlaying ? "Pause hero video" : "Play hero video"}
-              aria-pressed={isPlaying}
-              className="absolute bottom-3 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:ring-offset-2 sm:bottom-4 sm:right-4"
-            >
-              {isPlaying ? (
-                <Pause className="h-5 w-5 fill-current" aria-hidden="true" />
-              ) : (
-                <Play className="h-5 w-5 fill-current translate-x-0.5" aria-hidden="true" />
-              )}
-            </button>
+
+            {!hasStarted && (
+              <div
+                onClick={startPlayback}
+                className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center bg-black/25 transition-all group-hover:bg-black/35"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    startPlayback();
+                  }
+                }}
+                aria-label="Play full video"
+              >
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#E65100] text-white shadow-2xl transition-transform group-hover:scale-110 sm:h-20 sm:w-20">
+                  <Play className="h-8 w-8 translate-x-0.5 fill-current sm:h-10 sm:w-10" />
+                </div>
+                <span className="mt-3 rounded-full bg-black/70 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm sm:text-sm">
+                  Watch Full Video (3 mins)
+                </span>
+              </div>
+            )}
           </div>
           <figcaption className="bg-[#FFB300] px-6 py-5 font-heading text-lg text-[#212121] sm:text-xl">
             Children are the future.
